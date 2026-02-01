@@ -1,6 +1,10 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "PlayAid"
+link: "https://bberg.framer.website/projects/playful-healthcare-project"
+header:
+  teaser: ux-project.png
+excerpt: >-
+  "Keiner ist klein um Helfer zu sein!" With these words we started the project in the "Playful Health Care" design module as a group project in the summer semester of 2024.
 collection: portfolio
 ---
 
