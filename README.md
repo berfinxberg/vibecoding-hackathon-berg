@@ -4,6 +4,14 @@ Personal UX portfolio site built on Academic Pages (Jekyll) with a custom theme 
 
 ## Quick start (local)
 
+### Get the code
+If you are running it on a new machine, clone the repository first:
+
+```bash
+git clone <https://github.com/berfinxberg/vibecoding-hackathon-berg.git>
+cd vibecoding-hackathon-berg
+```
+
 ### Option A: Ruby + Bundler
 1) Install Ruby and Bundler.
 2) Install dependencies:
