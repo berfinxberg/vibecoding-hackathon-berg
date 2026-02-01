@@ -8,7 +8,7 @@ Personal UX portfolio site built on Academic Pages (Jekyll) with a custom theme 
 If you are running it on a new machine, clone the repository first:
 
 ```bash
-git clone <https://github.com/berfinxberg/vibecoding-hackathon-berg.git>
+git clone https://github.com/berfinxberg/vibecoding-hackathon-berg.git
 cd vibecoding-hackathon-berg
 ```
 
