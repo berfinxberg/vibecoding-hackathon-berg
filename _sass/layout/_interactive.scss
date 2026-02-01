@@ -1,0 +1,235 @@
+/* ========================================================================== 
+   INTERACTIVE PAGE
+   ========================================================================== */
+
+.interactive-hero {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+
+  @include breakpoint($medium) {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+}
+
+.interactive-eyebrow {
+  font-size: $type-size-7;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--global-text-color-light);
+  margin: 0 0 0.5rem;
+}
+
+.interactive-title {
+  margin: 0 0 0.75rem;
+  font-size: $type-size-2;
+  line-height: 1.1;
+}
+
+.interactive-lead {
+  font-size: $type-size-5;
+  margin-bottom: 1.5rem;
+}
+
+.interactive-meta {
+  margin: 0 0 1.5rem;
+  color: var(--global-text-color-light);
+  font-size: $type-size-6;
+}
+
+.interactive-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.interactive-swap {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--global-border-color);
+  background: var(--global-bg-color);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+}
+
+.interactive-swap:focus {
+  outline: 2px solid var(--global-link-color);
+  outline-offset: 4px;
+}
+
+.swap-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+.swap-image--after {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.interactive-swap:hover .swap-image--after,
+.interactive-swap:focus .swap-image--after,
+.interactive-swap:focus-within .swap-image--after {
+  opacity: 1;
+}
+
+.interactive-swap:hover .swap-image--before,
+.interactive-swap:focus .swap-image--before,
+.interactive-swap:focus-within .swap-image--before {
+  opacity: 0;
+}
+
+.interactive-swap figcaption {
+  padding: 0.75rem 1rem;
+  font-size: $type-size-7;
+  color: var(--global-text-color-light);
+  background: var(--global-bg-color);
+}
+
+.interactive-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin: 1.5rem 0 1.25rem;
+
+  @include breakpoint($medium) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.interactive-video {
+  margin: 2rem 0 2.75rem;
+  display: grid;
+  gap: 0.75rem;
+  justify-items: center;
+}
+
+.interactive-video__frame {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--global-border-color);
+  background: #000;
+  padding-top: 56.25%;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+  max-width: 960px;
+  width: 100%;
+}
+
+.interactive-video__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+@supports (aspect-ratio: 16 / 9) {
+  .interactive-video__frame {
+    padding-top: 0;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.interactive-video__note {
+  margin-top: 0.25rem;
+  color: var(--global-text-color-light);
+  font-size: $type-size-6;
+  max-width: 960px;
+}
+
+.interactive-card {
+  border: 1px solid var(--global-border-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  background: var(--global-bg-color);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.interactive-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.interactive-list {
+  margin: 0 0 1rem;
+}
+
+.interactive-list div {
+  display: grid;
+  grid-template-columns: minmax(140px, 200px) 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  margin-bottom: 0.75rem;
+}
+
+.interactive-list dt {
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.interactive-list dd {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.interactive-card details {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--global-border-color);
+  background: var(--global-bg-color);
+}
+
+.interactive-card summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.interactive-figure {
+  margin: 1rem 0 1.25rem;
+}
+
+.interactive-figure img {
+  border-radius: 12px;
+  border: 1px solid var(--global-border-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.interactive-figure figcaption {
+  margin-top: 0.5rem;
+  font-size: $type-size-7;
+  color: var(--global-text-color-light);
+}
+
+.interactive-reveal {
+  margin-bottom: 2rem;
+}
+
+.interactive-reveal-grid {
+  display: grid;
+  gap: 0.75rem;
+
+  @include breakpoint($medium) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.interactive-reveal details {
+  border: 1px solid var(--global-border-color);
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+  background: var(--global-bg-color);
+}
+
+.interactive-reveal summary {
+  font-weight: bold;
+  cursor: pointer;
+}

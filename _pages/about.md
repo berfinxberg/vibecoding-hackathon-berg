@@ -42,6 +42,10 @@ author_profile: false
       <span class="quick-card__title">CV</span>
       <span class="quick-card__desc">Text, PDF, and accessible formats.</span>
     </a>
+    <a class="quick-card" href="{{ base_path }}/interactive/">
+      <span class="quick-card__title">Interactive project</span>
+      <span class="quick-card__desc">UNNIEQUE case overview with video and details.</span>
+    </a>
     <a class="quick-card" href="mailto:beb9496@thi.de">
       <span class="quick-card__title">Email</span>
       <span class="quick-card__desc">Start a collaboration or ask a question.</span>
