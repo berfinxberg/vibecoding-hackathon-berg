@@ -1,3 +1,98 @@
 <script type="module" src="{{ base_path }}/assets/js/main.min.js"></script>
+<script>
+  (function () {
+    if (window.__themeToggleBound) return;
+
+    var supportedThemes = ["light", "dark", "party"];
+    var themeLabels = { light: "Light", dark: "Dark", party: "Party" };
+    var themeIcons = { light: "fa-sun", dark: "fa-moon", party: "fa-music" };
+    var themeIconClasses = "fa-sun fa-moon fa-music";
+
+    function normalizeTheme(theme) {
+      return supportedThemes.indexOf(theme) !== -1 ? theme : null;
+    }
+
+    function getStoredTheme() {
+      try {
+        return normalizeTheme(localStorage.getItem("theme"));
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function setStoredTheme(theme) {
+      try {
+        localStorage.setItem("theme", theme);
+      } catch (err) {}
+    }
+
+    function getCurrentTheme() {
+      return normalizeTheme(document.documentElement.getAttribute("data-theme")) || "light";
+    }
+
+    function updateThemeToggle(theme) {
+      var label = themeLabels[theme] || themeLabels.light;
+      var iconClass = themeIcons[theme] || themeIcons.light;
+      var icon = document.getElementById("theme-icon");
+      var labelEl = document.getElementById("theme-label");
+      var statusEl = document.getElementById("theme-toggle-status");
+      var toggleEl = document.querySelector("#theme-toggle a.theme-toggle");
+      var statusText = "Theme: " + label;
+
+      if (icon) {
+        icon.classList.remove.apply(icon.classList, themeIconClasses.split(" "));
+        icon.classList.add(iconClass);
+      }
+      if (labelEl) labelEl.textContent = label;
+      if (statusEl) statusEl.textContent = statusText;
+      if (toggleEl) {
+        toggleEl.setAttribute("aria-label", statusText);
+        toggleEl.setAttribute("title", statusText);
+      }
+    }
+
+    function setTheme(theme) {
+      var nextTheme = normalizeTheme(theme) || "light";
+      if (nextTheme === "light") {
+        document.documentElement.removeAttribute("data-theme");
+      } else {
+        document.documentElement.setAttribute("data-theme", nextTheme);
+      }
+      updateThemeToggle(nextTheme);
+    }
+
+    function toggleTheme(event) {
+      if (event && typeof event.preventDefault === "function") {
+        event.preventDefault();
+      }
+      var currentTheme = getCurrentTheme();
+      var currentIndex = supportedThemes.indexOf(currentTheme);
+      var nextTheme = supportedThemes[(currentIndex + 1) % supportedThemes.length];
+      setStoredTheme(nextTheme);
+      setTheme(nextTheme);
+    }
+
+    function bindToggle() {
+      var toggleEl = document.querySelector("#theme-toggle a.theme-toggle");
+      if (!toggleEl) return;
+
+      toggleEl.addEventListener("click", toggleTheme);
+      toggleEl.addEventListener("keydown", function (event) {
+        if (event.key === " " || event.key === "Spacebar" || event.key === "Enter") {
+          event.preventDefault();
+          toggleTheme();
+        }
+      });
+      setTheme(getStoredTheme() || "light");
+      window.__themeToggleBound = true;
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", bindToggle);
+    } else {
+      bindToggle();
+    }
+  })();
+</script>
 
 {% include analytics.html %}

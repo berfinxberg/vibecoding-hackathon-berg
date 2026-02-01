@@ -19,7 +19,11 @@
             </li>
           {% endfor %}
           <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
+            <a href="#" role="button" aria-label="Theme: Light" class="theme-toggle">
+              <i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true"></i>
+              <span id="theme-label" class="theme-toggle__label" aria-hidden="true">Light</span>
+              <span id="theme-toggle-status" class="visually-hidden" aria-live="polite">Theme: Light</span>
+            </a>
           </li>
         </ul>
         <ul class="hidden-links hidden"></ul>
