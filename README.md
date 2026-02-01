@@ -54,6 +54,7 @@ http://localhost:4000
 
 ## Notable pages
 - `/` Home (hero + quick access)
+- `/about/` Infos about me
 - `/portfolio/` Projects
 - `/cv/` CV (text + PDF preview/download)
 - `/interactive/` Interactive UNNIEQUE project page
