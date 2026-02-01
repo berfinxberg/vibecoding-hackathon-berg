@@ -55,9 +55,9 @@ http://localhost:4000
 ## Notable pages
 - `/` Home (hero + quick access)
 - `/about/` Infos about me
-- `/portfolio/` Projects
-- `/cv/` CV (text + PDF preview/download)
+- `/projects/` Projects
 - `/interactive/` Interactive UNNIEQUE project page
+- `/cv/` CV (text + PDF preview/download)
 
 ## Theme switching
 Use the header toggle to switch between Light, Dark, and Party themes. The selection is saved in localStorage.
